@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Distance Calculator</title>
+		<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+    <style>
+      #left-panel {
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+      #left-panel i {
+        font-size: 12px;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+				float: right;
+        height: 50%;
+        width: 40%;
+				margin-right: 5%;
+				margin-top: 50px;
+
+      }
+      #left-panel {
+        float: left;
+        width: 48%;
+
+        padding-left: 3%;
+				margin-top: 50px;
+      }
+      #output {
+        font-size: 11px;
+      }
+			header {
+			  background-color: #4ABDAC;
+			  height: 10%;
+			  text-align: center;
+			  font-family: 'Poiret One', cursive;
+			  color: ivory;
+        clear: left;
+        margin: 0;
+        padding: 0;
+			}
+
+      .restart-btn {
+
+      }
+
+			h1 {
+			  padding-top: 18px;
+			}
+    </style>
+  </head>
+
+
+  <body>
+		<header>
+      <h1>It's Happy Hour Somewhere</h1>
+      <form class="restart-btn">
+        <button type="submit" class="restart-btn">Home  <!--<img src="https://cdn1.iconfinder.com/data/icons/maps-7/48/Current_Position-512.png" class="current-loc-img" alt="current location image">-->
+        </button>
+      </form>
+    </header>
+    <div id="left-panel">
+      <div id="inputs">
+      </div>
+
+      <div>
+        <strong>Results</strong>
+      </div>
+
+      <div id="output"></div>
+    </div>
+
+
+    <div id="map"></div>
+
+
+
+
+
+    <script>
+
+
+
+
+      function initMap() {
+        var bounds = new google.maps.LatLngBounds;
+        var markersArray = [];
+
+        var lat = localStorage.getItem('lat');
+        var long = localStorage.getItem('long');
+        var userAddress = localStorage.getItem('address');
+
+        if(lat === null) {
+          var origin = userAddress;
+        }
+        else {
+          var origin = lat +','+ long;
+        }
+
+        var destinationA = '2911 Main St, Santa Monica, CA 90405';
+        var destinationB = '13455 Maxella Ave, Marina Del Rey, CA 90292';
+				var destinationC = '1602 Ocean Ave, Santa Monica, CA 90401';
+				var destinationD = '213 Windward Ave, Venice, CA 90291';
+
+
+        var destinationIcon = 'https://chart.googleapis.com/chart?' +
+            'chst=d_map_pin_letter&chld=D|FF0000|000000';
+        var originIcon = 'https://chart.googleapis.com/chart?' +
+            'chst=d_map_pin_letter&chld=O|FFFF00|000000';
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 34.0448583, lng: -118.4484367},
+          zoom: 10
+        });
+        var geocoder = new google.maps.Geocoder;
+
+        var service = new google.maps.DistanceMatrixService;
+        service.getDistanceMatrix({
+          origins: [origin],
+          destinations: [destinationA, destinationB, destinationC, destinationD],
+          travelMode: 'DRIVING',
+          unitSystem: google.maps.UnitSystem.IMPERIAL,
+          avoidHighways: false,
+          avoidTolls: false
+        }, function(response, status) {
+          if (status !== 'OK') {
+            alert('Error was: ' + status);
+          }
+
+					else {
+            var originList = response.originAddresses;
+            var destinationList = response.destinationAddresses;
+            var outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = '';
+            deleteMarkers(markersArray);
+
+            var showGeocodedAddressOnMap = function(asDestination) {
+              var icon = asDestination ? destinationIcon : originIcon;
+              return function(results, status) {
+                if (status === 'OK') {
+                  map.fitBounds(bounds.extend(results[0].geometry.location));
+                  markersArray.push(new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location,
+                    icon: icon
+                  }));
+                } else {
+                  alert('Geocode was not successful due to: ' + status);
+                }
+              };
+            };
+
+            for (var i = 0; i < originList.length; i++) {
+              var results = response.rows[i].elements;
+              geocoder.geocode({'address': originList[i]},
+                  showGeocodedAddressOnMap(false));
+              for (var j = 0; j < results.length; j++) {
+                geocoder.geocode({'address': destinationList[j]},
+                    showGeocodedAddressOnMap(true));
+                    //add dist and timeToDrive to bar array
+                outputDiv.innerHTML += originList[i] + '<br>Distance to ' + destinationList[j] +
+                    ':  <br>' + results[j].distance.text + ': Driving will take ' +
+                    results[j].duration.text + '<br>';
+
+              }
+            }
+          }
+        });
+      }
+
+      function deleteMarkers(markersArray) {
+        for (var i = 0; i < markersArray.length; i++) {
+          markersArray[i].setMap(null);
+        }
+        markersArray = [];
+      }
+
+      //function to restart search
+      //localStorage.removeitem to clear local storage
+      //localStorage.removeItem('lat', 'long', 'address');
+
+      function watchSubmit() {
+        $('.restart-btn').submit(event => {
+          event.preventDefault();
+          localStorage.removeItem('lat');
+          localStorage.removeItem('long');
+          localStorage.removeItem('address');
+          window.location = 'index.html';
+          console.log('in submit');
+        });
+      }
+
+      $(watchSubmit);
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXs4IQT91vKSLc_pRvXlKHS_XYU2b_cDM&callback=initMap">
+    </script>
+  </body>
+</html>

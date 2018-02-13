@@ -1,0 +1,110 @@
+checked:
+LA Weekly 10 Best Happy Hours on the Westside,
+
+to check:
+https://www.thrillist.com/drink/los-angeles/longest-la-happy-hours-cheap-drinks-deals
+
+[{ day: 'm', hours: '9-5', deals: []}]
+
+{
+name: 'Brick + Mortar',
+address: '2435 Main St., Santa Monica, CA 90405',
+type: 'American',
+happyHours: [{
+  day:
+  hours:
+  deals: [{}]
+}]
+happydays: 'M, Tu, W, Th, F',?
+happyhours: '12-6pm',
+yelplink: 'https://www.yelp.com/biz/brick-mortar-santa-monica',
+distance: '',
+},
+{
+name: 'Enterprise Fish Co.',
+address: '174 Kinney St, Santa Monica, CA 90405',
+type: 'Seafood',
+happydays: 'F-Sa',
+happyhours: '9-11pm',
+yelplink: 'https://www.yelp.com/biz/enterprise-fish-santa-monica-3'
+},
+{
+name: 'Enterprise Fish Co.',
+address: '174 Kinney St, Santa Monica, CA 90405',
+type: 'Seafood',
+happydays: 'M-F',
+happyhours: '4-7pm',
+yelplink: 'https://www.yelp.com/biz/enterprise-fish-santa-monica-3'
+},
+{
+name: 'Hama Sushi',
+address: '213 Windward Ave, Venice, CA 90291',
+type: 'Sushi',
+happydays: 'M-Su',
+happyhours: '4-7pm',
+yelplink: 'https://www.yelp.com/biz/hama-sushi-venice'
+},
+{
+name: 'Hayden',
+address: '8820 Washington Blvd, Culver City, CA 90232',
+type: 'Cafe, Wine Bar, Waffles',
+happydays: 'M-Su',
+happyhours: '5-7pm',
+yelplink: 'https://www.yelp.com/biz/hayden-culver-city-3',
+},
+{
+name: 'Little Ruby',
+address: '109 Santa Monica Blvd, Santa Monica, CA 90401',
+type: 'Australian, Burgers',
+happydays: 'M-F',
+happyhours: '4-630pm',
+yelplink: 'https://www.yelp.com/biz/little-ruby-santa-monica-2'
+},
+{
+name: 'The Lobster',
+address: '1602 Ocean Ave, Santa Monica, CA 90401',
+type: 'Seafood',
+happydays: 'M-F',
+happyhours: '430-630pm',
+yelplink: 'https://www.yelp.com/biz/the-lobster-santa-monica'
+},
+{
+name: 'Lunetta All Day',
+address: '2420 Pico Blvd, Santa Monica, CA 90405',
+type: 'American',
+happydays: 'M-F',
+happyhours: '4-6pm',
+yelplink: 'https://www.yelp.com/biz/lunetta-all-day-santa-monica'
+},
+{
+name: 'Michael's',
+address: '1147 3rd St, Santa Monica, CA 90403',
+type: 'American, Bar',
+happydays: 'M-Sa',
+happyhours: '5-1030pm',
+yelplink: 'https://www.yelp.com/biz/michaels-santa-monica-2'
+},
+{
+name: 'Sushi Roku',
+address: '1401 Ocean Ave, Santa Monica, CA 90401',
+type: 'Sushi',
+happydays: 'M-Su',
+happyhours: '5-630pm',
+yelplink: 'https://www.yelp.com/biz/sushi-roku-santa-monica'
+},
+{
+name: 'Tallula's',
+address: '118 Entrada Dr, Santa Monica, CA 90402',
+type: 'Mexican',
+happydays: 'M-F',
+happyhours: '4-6pm',
+yelplink: 'https://www.yelp.com/biz/tallulas-santa-monica'
+},
+{
+name:
+address:
+type:
+happydays:
+happyhours:
+yelplink:
+},
