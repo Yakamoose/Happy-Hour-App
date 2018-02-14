@@ -40,16 +40,17 @@
       #output {
         font-size: 11px;
       }
-			header {
+
+      header {
 			  background-color: #4ABDAC;
 			  height: 10%;
 			  text-align: center;
 			  font-family: 'Poiret One', cursive;
 			  color: ivory;
-        clear: left;
         margin: 0;
-        padding: 0;
 			}
+
+
 
       .restart-btn {
 
@@ -58,11 +59,13 @@
 			h1 {
 			  padding-top: 18px;
 			}
+
     </style>
   </head>
 
 
   <body>
+
 		<header>
       <h1>It's Happy Hour Somewhere</h1>
       <form class="restart-btn">
@@ -70,9 +73,9 @@
         </button>
       </form>
     </header>
+
     <div id="left-panel">
-      <div id="inputs">
-      </div>
+      <div id="inputs"></div>
 
       <div>
         <strong>Results</strong>
@@ -81,17 +84,12 @@
       <div id="output"></div>
     </div>
 
-
     <div id="map"></div>
 
 
 
 
-
     <script>
-
-
-
 
       function initMap() {
         var bounds = new google.maps.LatLngBounds;
@@ -108,10 +106,92 @@
           var origin = lat +','+ long;
         }
 
-        var destinationA = '2911 Main St, Santa Monica, CA 90405';
-        var destinationB = '13455 Maxella Ave, Marina Del Rey, CA 90292';
-				var destinationC = '1602 Ocean Ave, Santa Monica, CA 90401';
-				var destinationD = '213 Windward Ave, Venice, CA 90291';
+        //assign json destinations object to this file
+/*
+        function loadJSON(callback) {
+
+          var xobj = new XMLHttpRequest();
+          xobj.overrideMimeType("application/json");
+          xobj.open('GET', './destinations.json', true); // Replace 'my_data' with the path to your file
+          xobj.onreadystatechange = function () {
+            if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+              callback(xobj.responseText);
+            }
+          };
+          xobj.send(null);
+        }
+
+        var destination = []
+        function init() {
+          loadJSON(function(response) {
+            // Parse JSON string into object
+            destination = JSON.parse(response);
+            console.log(destination);
+          });
+        }
+        init();
+*/
+        var destination = [];
+        $.getJSON('destinations.json')
+          .done(function(data) {
+            destination = data;
+          })
+
+        console.log(destination);
+
+        var destinations = [
+          {
+          name: 'The Lobster',
+          address: '1602 Ocean Ave, Santa Monica, CA 90401',
+          type: 'Seafood',
+          happydays: 'M-F',
+          happyhours: '430-630pm',
+          yelplink: 'https://www.yelp.com/biz/the-lobster-santa-monica',
+          distance: '',
+          },
+          {
+          name: 'Lunetta All Day',
+          address: '2420 Pico Blvd, Santa Monica, CA 90405',
+          type: 'American',
+          happydays: 'M-F',
+          happyhours: '4-6pm',
+          yelplink: 'https://www.yelp.com/biz/lunetta-all-day-santa-monica',
+          distance: '',
+          },
+          {
+          name: 'Michaels',
+          address: '1147 3rd St, Santa Monica, CA 90403',
+          type: 'American, Bar',
+          happydays: 'M-Sa',
+          happyhours: '5-1030pm',
+          yelplink: 'https://www.yelp.com/biz/michaels-santa-monica-2',
+          distance: '',
+          },
+          {
+          name: 'Sushi Roku',
+          address: '1401 Ocean Ave, Santa Monica, CA 90401',
+          type: 'Sushi',
+          happydays: 'M-Su',
+          happyhours: '5-630pm',
+          yelplink: 'https://www.yelp.com/biz/sushi-roku-santa-monica',
+          distance: '',
+          },
+          {
+          name: 'Tallulas',
+          address: '118 Entrada Dr, Santa Monica, CA 90402',
+          type: 'Mexican',
+          happydays: 'M-F',
+          happyhours: '4-6pm',
+          yelplink: 'https://www.yelp.com/biz/tallulas-santa-monica',
+          distance: '',
+          }];
+
+        var locations = [];
+        for (let i = 0; i < destinations.length; i++) {
+          locations.push(destinations[i].address);
+        }
+
 
 
         var destinationIcon = 'https://chart.googleapis.com/chart?' +
@@ -127,7 +207,7 @@
         var service = new google.maps.DistanceMatrixService;
         service.getDistanceMatrix({
           origins: [origin],
-          destinations: [destinationA, destinationB, destinationC, destinationD],
+          destinations: locations,
           travelMode: 'DRIVING',
           unitSystem: google.maps.UnitSystem.IMPERIAL,
           avoidHighways: false,
@@ -167,13 +247,19 @@
               for (var j = 0; j < results.length; j++) {
                 geocoder.geocode({'address': destinationList[j]},
                     showGeocodedAddressOnMap(true));
-                    //add dist and timeToDrive to bar array
-                outputDiv.innerHTML += originList[i] + '<br>Distance to ' + destinationList[j] +
+
+                    //add dist to bar array
+                destinations[j].distance = results[j].distance.text;
+
+                outputDiv.innerHTML += originList[i] + '<br>Name: '+ destinations[j].name + '<br>Distance to ' + destinationList[j] +
                     ':  <br>' + results[j].distance.text + ': Driving will take ' +
                     results[j].duration.text + '<br>';
 
               }
             }
+
+
+            //console.log(destinations);
           }
         });
       }
@@ -196,13 +282,13 @@
           localStorage.removeItem('long');
           localStorage.removeItem('address');
           window.location = 'index.html';
-          console.log('in submit');
         });
       }
 
       $(watchSubmit);
 
     </script>
+    <script type="text/javascript" src="destinations.json"></script>"
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXs4IQT91vKSLc_pRvXlKHS_XYU2b_cDM&callback=initMap">
     </script>

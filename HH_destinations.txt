@@ -26,7 +26,8 @@ address: '174 Kinney St, Santa Monica, CA 90405',
 type: 'Seafood',
 happydays: 'F-Sa',
 happyhours: '9-11pm',
-yelplink: 'https://www.yelp.com/biz/enterprise-fish-santa-monica-3'
+yelplink: 'https://www.yelp.com/biz/enterprise-fish-santa-monica-3',
+distance: '',
 },
 {
 name: 'Enterprise Fish Co.',
@@ -34,7 +35,8 @@ address: '174 Kinney St, Santa Monica, CA 90405',
 type: 'Seafood',
 happydays: 'M-F',
 happyhours: '4-7pm',
-yelplink: 'https://www.yelp.com/biz/enterprise-fish-santa-monica-3'
+yelplink: 'https://www.yelp.com/biz/enterprise-fish-santa-monica-3',
+distance: '',
 },
 {
 name: 'Hama Sushi',
@@ -42,7 +44,8 @@ address: '213 Windward Ave, Venice, CA 90291',
 type: 'Sushi',
 happydays: 'M-Su',
 happyhours: '4-7pm',
-yelplink: 'https://www.yelp.com/biz/hama-sushi-venice'
+yelplink: 'https://www.yelp.com/biz/hama-sushi-venice',
+distance: '',
 },
 {
 name: 'Hayden',
@@ -51,6 +54,7 @@ type: 'Cafe, Wine Bar, Waffles',
 happydays: 'M-Su',
 happyhours: '5-7pm',
 yelplink: 'https://www.yelp.com/biz/hayden-culver-city-3',
+distance: '',
 },
 {
 name: 'Little Ruby',
@@ -58,7 +62,8 @@ address: '109 Santa Monica Blvd, Santa Monica, CA 90401',
 type: 'Australian, Burgers',
 happydays: 'M-F',
 happyhours: '4-630pm',
-yelplink: 'https://www.yelp.com/biz/little-ruby-santa-monica-2'
+yelplink: 'https://www.yelp.com/biz/little-ruby-santa-monica-2',
+distance: '',
 },
 {
 name: 'The Lobster',
@@ -66,7 +71,8 @@ address: '1602 Ocean Ave, Santa Monica, CA 90401',
 type: 'Seafood',
 happydays: 'M-F',
 happyhours: '430-630pm',
-yelplink: 'https://www.yelp.com/biz/the-lobster-santa-monica'
+yelplink: 'https://www.yelp.com/biz/the-lobster-santa-monica',
+distance: '',
 },
 {
 name: 'Lunetta All Day',
@@ -74,15 +80,17 @@ address: '2420 Pico Blvd, Santa Monica, CA 90405',
 type: 'American',
 happydays: 'M-F',
 happyhours: '4-6pm',
-yelplink: 'https://www.yelp.com/biz/lunetta-all-day-santa-monica'
+yelplink: 'https://www.yelp.com/biz/lunetta-all-day-santa-monica',
+distance: '',
 },
 {
-name: 'Michael's',
+name: 'Michaels',
 address: '1147 3rd St, Santa Monica, CA 90403',
 type: 'American, Bar',
 happydays: 'M-Sa',
 happyhours: '5-1030pm',
-yelplink: 'https://www.yelp.com/biz/michaels-santa-monica-2'
+yelplink: 'https://www.yelp.com/biz/michaels-santa-monica-2',
+distance: '',
 },
 {
 name: 'Sushi Roku',
@@ -90,15 +98,17 @@ address: '1401 Ocean Ave, Santa Monica, CA 90401',
 type: 'Sushi',
 happydays: 'M-Su',
 happyhours: '5-630pm',
-yelplink: 'https://www.yelp.com/biz/sushi-roku-santa-monica'
+yelplink: 'https://www.yelp.com/biz/sushi-roku-santa-monica',
+distance: '',
 },
 {
-name: 'Tallula's',
+name: 'Tallulas',
 address: '118 Entrada Dr, Santa Monica, CA 90402',
 type: 'Mexican',
 happydays: 'M-F',
 happyhours: '4-6pm',
-yelplink: 'https://www.yelp.com/biz/tallulas-santa-monica'
+yelplink: 'https://www.yelp.com/biz/tallulas-santa-monica',
+distance: '',
 },
 {
 name:

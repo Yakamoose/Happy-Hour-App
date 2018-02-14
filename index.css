@@ -4,14 +4,14 @@
 
 /*----------Start Page Styling----------*/
 
-header {
+nav {
   background-color: #4ABDAC;
   height: 10%;
   text-align: center;
   font-family: 'Poiret One', cursive;
   color: ivory;
-  margin-bottom: 30px;
-  
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -19,7 +19,7 @@ h1 {
 }
 
 .description {
-  margin-top: 20px;
+  margin-top: 30px;
   width: 50%;
   margin-left: auto;
   margin-right: auto;
@@ -40,6 +40,3 @@ input {
   display: block;
   margin: 15px auto;
 }
-
-
-/*----------Results Page Styling----------*/
