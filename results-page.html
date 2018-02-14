@@ -109,11 +109,11 @@
         //assign json destinations object to this file
 
         var destination = [];
-       $.getJSON('destinations.json')
-         .done(function(data) {
-           destination = data;
-           console.log(destination);
-         })
+        $.getJSON('destinations.json')
+          .done(function(data) {
+            destination = data;
+            console.log(destination);
+          })
 
        var destinations = [
          {
