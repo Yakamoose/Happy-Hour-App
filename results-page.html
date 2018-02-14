@@ -132,62 +132,17 @@
         }
         init();
 */
-        var destination = [];
+        var destinations = [];
         $.getJSON('destinations.json')
           .done(function(data) {
-            destination = data;
+            destinations = data;
 
           })
-          console.log(destination);
+          console.log(destinations);
 
 
 
-        var destinations = [
-          {
-          name: 'The Lobster',
-          address: '1602 Ocean Ave, Santa Monica, CA 90401',
-          type: 'Seafood',
-          happydays: 'M-F',
-          happyhours: '430-630pm',
-          yelplink: 'https://www.yelp.com/biz/the-lobster-santa-monica',
-          distance: '',
-          },
-          {
-          name: 'Lunetta All Day',
-          address: '2420 Pico Blvd, Santa Monica, CA 90405',
-          type: 'American',
-          happydays: 'M-F',
-          happyhours: '4-6pm',
-          yelplink: 'https://www.yelp.com/biz/lunetta-all-day-santa-monica',
-          distance: '',
-          },
-          {
-          name: 'Michaels',
-          address: '1147 3rd St, Santa Monica, CA 90403',
-          type: 'American, Bar',
-          happydays: 'M-Sa',
-          happyhours: '5-1030pm',
-          yelplink: 'https://www.yelp.com/biz/michaels-santa-monica-2',
-          distance: '',
-          },
-          {
-          name: 'Sushi Roku',
-          address: '1401 Ocean Ave, Santa Monica, CA 90401',
-          type: 'Sushi',
-          happydays: 'M-Su',
-          happyhours: '5-630pm',
-          yelplink: 'https://www.yelp.com/biz/sushi-roku-santa-monica',
-          distance: '',
-          },
-          {
-          name: 'Tallulas',
-          address: '118 Entrada Dr, Santa Monica, CA 90402',
-          type: 'Mexican',
-          happydays: 'M-F',
-          happyhours: '4-6pm',
-          yelplink: 'https://www.yelp.com/biz/tallulas-santa-monica',
-          distance: '',
-          }];
+
 
         var locations = [];
         for (let i = 0; i < destinations.length; i++) {
