@@ -132,21 +132,21 @@
         }
         init();
 */
-        var destinations = [];
+        var destination = [];
         $.getJSON('destinations.json')
           .done(function(data) {
-            destinations = data;
+            destination = data;
 
           })
-          console.log(destinations);
+          console.log(destination);
 
 
 
 
 
         var locations = [];
-        for (let i = 0; i < destinations.length; i++) {
-          locations.push(destinations[i].address);
+        for (let i = 0; i < destination.length; i++) {
+          locations.push(destination[i].address);
         }
 
 
