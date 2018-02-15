@@ -11,14 +11,16 @@ name: 'Brick + Mortar',
 address: '2435 Main St., Santa Monica, CA 90405',
 type: 'American',
 happyHours: [{
-  day:
-  hours:
-  deals: [{}]
+  day: [1, 2, 3, 4, 5],
+  hhStart: 12;
+  hhEnd: 18;
 }]
-happydays: 'M, Tu, W, Th, F',?
-happyhours: '12-6pm',
+deals: [{}]
 yelplink: 'https://www.yelp.com/biz/brick-mortar-santa-monica',
 distance: '',
+
+hhDays: 'M, Tu, W, Th, F',?
+happyhours: '12-6pm',
 },
 {
 name: 'Enterprise Fish Co.',
