@@ -48,9 +48,8 @@
 			  font-family: 'Poiret One', cursive;
 			  color: ivory;
         margin: 0;
+
 			}
-
-
 
       .restart-btn {
 
@@ -118,85 +117,353 @@
 */
       var destinations = [
         {
+        name: 'Brick + Mortar',
+        address: '2435 Main St., Santa Monica, CA 90405',
+        type: 'American',
+        happyHours: [{
+          day: [1,2, 3, 4, 5],
+          hhStart: 12,
+          hhEnd: 18,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
+        distance: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: 'http://www.brickandmortar-brg.com/happyhour',
+        },
+
+        {
         name: 'Enterprise Fish Co.',
         address: '174 Kinney St, Santa Monica, CA 90405',
         type: 'Seafood',
-        happydays: 'M-F',
-        happyhours: '4-7pm',
-        yelplink: 'https://www.yelp.com/biz/enterprise-fish-santa-monica-3',
-        distance: '',
+        happyHours: [{
+          day: [1,2, 3, 4, 5],
+          hhStart: 16,
+          hhEnd: 19,
+          deals: 'Drinks & Food',
         },
+        {
+          day: [5, 6],
+          hhStart: 21,
+          hhEnd: 23,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
+        distance: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: 'https://www.enterprisefishcosantamonica.com/happy-hour',
+        },
+
         {
         name: 'Hama Sushi',
         address: '213 Windward Ave, Venice, CA 90291',
         type: 'Sushi',
-        happydays: 'M-Su',
-        happyhours: '4-7pm',
-        yelplink: 'https://www.yelp.com/biz/hama-sushi-venice',
+        happyHours: [{
+          day: [0, 1, 2, 3, 4, 5, 6],
+          hhStart: 16,
+          hhEnd: 19,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
         distance: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: 'http://www.theveniceconcierge.com/wp-content/uploads/2015/02/Screen-Shot-2015-02-28-at-5.26.05-PM.png',
         },
+
         {
         name: 'Hayden',
         address: '8820 Washington Blvd, Culver City, CA 90232',
         type: 'Cafe, Wine Bar, Waffles',
-        happydays: 'M-Su',
-        happyhours: '5-7pm',
-        yelplink: 'https://www.yelp.com/biz/hayden-culver-city-3',
+        happyHours: [{
+          day: [0, 1, 2, 3, 4, 5, 6],
+          hhStart: 17,
+          hhEnd: 19,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
         distance: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: 'https://www.hayden.la/',
         },
+
         {
         name: 'Little Ruby',
         address: '109 Santa Monica Blvd, Santa Monica, CA 90401',
         type: 'Australian, Burgers',
-        happydays: 'M-F',
-        happyhours: '4-630pm',
-        yelplink: 'https://www.yelp.com/biz/little-ruby-santa-monica-2',
+        happyHours: [{
+          day: [1, 2, 3, 4, 5],
+          hhStart: 16,
+          hhEnd: 18.5,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
         distance: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: 'https://patch.com/california/santamonica/new-happy-hour-launches-little-ruby-santa-monica',
         },
+
+
         {
         name: 'The Lobster',
         address: '1602 Ocean Ave, Santa Monica, CA 90401',
         type: 'Seafood',
-        happydays: 'M-F',
-        happyhours: '430-630pm',
-        yelplink: 'https://www.yelp.com/biz/the-lobster-santa-monica',
+        happyHours: [{
+          day: [1, 2, 3, 4, 5],
+          hhStart: 16.5,
+          hhEnd: 18.5,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
         distance: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: 'http://thelobster.com/happy-hour-menu/',
         },
+
         {
         name: 'Lunetta All Day',
         address: '2420 Pico Blvd, Santa Monica, CA 90405',
         type: 'American',
-        happydays: 'M-F',
-        happyhours: '4-6pm',
-        yelplink: 'https://www.yelp.com/biz/lunetta-all-day-santa-monica',
+        happyHours: [{
+          day: [1, 2, 3, 4, 5],
+          hhStart: 16,
+          hhEnd: 18,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
         distance: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: 'https://www.lunettasm.com/all-day#allday-menu',
         },
+
+
         {
         name: 'Michaels',
         address: '1147 3rd St, Santa Monica, CA 90403',
         type: 'American, Bar',
-        happydays: 'M-Sa',
-        happyhours: '5-1030pm',
-        yelplink: 'https://www.yelp.com/biz/michaels-santa-monica-2',
+        happyHours: [{
+          day: [1, 2, 3, 4, 5, 6],
+          hhStart: 17,
+          hhEnd: 22.5,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
         distance: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: 'http://www.michaelssantamonica.com/',
         },
+
         {
         name: 'Sushi Roku',
         address: '1401 Ocean Ave, Santa Monica, CA 90401',
         type: 'Sushi',
-        happydays: 'M-Su',
-        happyhours: '5-630pm',
-        yelplink: 'https://www.yelp.com/biz/sushi-roku-santa-monica',
+        happyHours: [{
+          day: [1, 2, 3, 4, 5, 6],
+          hhStart: 17,
+          hhEnd: 18.5,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
         distance: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: 'http://www.innovativedining.com/download/SRSM_bar-menu-HH_11.20.17.pdf',
         },
+
         {
         name: 'Tallulas',
         address: '118 Entrada Dr, Santa Monica, CA 90402',
         type: 'Mexican',
-        happydays: 'M-F',
-        happyhours: '4-6pm',
-        yelplink: 'https://www.yelp.com/biz/tallulas-santa-monica',
+        happyHours: [{
+          day: [1, 2, 3, 4, 5],
+          hhStart: 16,
+          hhEnd: 18,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
         distance: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: 'http://www.tallulasrestaurant.com/wp-content/uploads/2018/01/Happy-Hour-1.25.18.pdf',
+        },
+
+        {
+        name: 'Canal Club',
+        address: '2025 Pacific Ave, Venice, CA 90291',
+        type: 'Sushi',
+        happyHours: [{
+          day: [0, 1, 2, 3, 4, 5, 6],
+          hhStart: 17,
+          hhEnd: 19,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
+        distance: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: 'http://www.canalclubvenice.com/new-page/',
+        },
+
+        {
+        name: 'Venice Whaler',
+        address: '10 Washington Blvd, Venice, CA 90292',
+        type: 'American',
+        happyHours: [{
+          day: [1, 2, 3, 4],
+          hhStart: 15,
+          hhEnd: 18,
+          deals: 'Drinks & Food',
+        },
+        {
+          day: [1, 2, 3, 4],
+          hhStart: 22,
+          hhEnd: 24,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
+        distance: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: 'https://www.venicewhaler.com/happy-hour',
+        },
+
+        {
+        name: 'Sunny Spot',
+        address: '822 Washington Blvd, Venice, CA 90292',
+        type: 'American',
+        happyHours: [{
+          day: [1, 2, 3, 4, 5],
+          hhStart: 15.5,
+          hhEnd: 18.5,
+          deals: 'Drinks & Food',
+        },
+        {
+          day: [5, 6],
+          hhStart: 23,
+          hhEnd: 24,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
+        distance: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: 'http://www.sunnyspotvenice.com/menus/',
+        },
+
+        {
+        name: 'Wabi Sabi',
+        address: '1637 Abbot Kinney Blvd, Venice, CA 90291',
+        type: 'Sushi',
+        happyHours: [{
+          day: [0, 1, 2, 3, 4, 5, 6],
+          hhStart: 17.5,
+          hhEnd: 18.5,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
+        distance: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: '',
+        },
+
+        {
+        name: 'Baja Cantina',
+        address: '311 Washington Blvd, Marina Del Rey, CA 90292',
+        type: 'Mexican',
+        happyHours: [{
+          day: [1, 2, 3, 4, 5],
+          hhStart: 15,
+          hhEnd: 18.5,
+          deals: 'Drinks & Food',
+        },
+        {
+          day: [1, 2, 3, 4, 5],
+          hhStart: 22,
+          hhEnd: 24,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
+        distance: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: 'http://www.bajacantina.com/weekly-food-specials/',
+        },
+
+        {
+        name: 'Venice Beach Wines',
+        address: '529 Rose Ave, Venice, CA 90291',
+        type: 'Wine Bar',
+        happyHours: [{
+          day: [1, 2, 3, 4, 5],
+          hhStart: 15,
+          hhEnd: 18,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
+        distance: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: 'http://venicebeachwines.com/dinner-menu-1/',
+        },
+
+        {
+        name: 'The Firehouse',
+        address: '213 Rose Ave, Venice, CA 90291',
+        type: 'American',
+        happyHours: [{
+          day: [1, 2, 3, 4, 5],
+          hhStart: 15,
+          hhEnd: 18,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
+        distance: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: 'https://www.firehouseoldsac.com/menus/happy-hour/',
+        },
+
+        {
+        name: 'The Anchor',
+        address: '235 Main St, Venice, CA 90291',
+        type: 'American/Seafood',
+        happyHours: [{
+          day: [2, 3, 4, 5],
+          hhStart: 15,
+          hhEnd: 18,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
+        distance: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: 'http://theanchorvenice.squarespace.com/happy-hour-menu-fall-2015/',
         }];
 
         var locations = [];
@@ -221,6 +488,10 @@
           origins: [origin],
           destinations: locations,
           travelMode: 'DRIVING',
+          drivingOptions: {
+            departureTime: new Date(Date.now() + 2000),
+            trafficModel: 'bestguess',
+          },
           unitSystem: google.maps.UnitSystem.IMPERIAL,
           avoidHighways: false,
           avoidTolls: false
@@ -252,58 +523,67 @@
               };
             };
 
-            var distances = []
 
             for (var i = 0; i < originList.length; i++) {
               var results = response.rows[i].elements;
               geocoder.geocode({'address': originList[i]},
                   showGeocodedAddressOnMap(false));
+                  outputDiv.innerHTML += originList[i] + '<br>';
               for (var j = 0; j < results.length; j++) {
-                geocoder.geocode({'address': destinationList[j]},
-                    showGeocodedAddressOnMap(true));
+// original           geocoder.geocode({'address': destinationList[j]},
+  //                  showGeocodedAddressOnMap(true));
+
+
+
+//------------------------Trying to handle over_query-limit
+                    if (status === google.maps.GeocoderStatus.OVER_QUERY_LIMIT) {
+                      setTimeout(function() {
+                        geocoder.geocode({'address': destinationList[j]},
+                            showGeocodedAddressOnMap(true));
+                      }, 1000 );
+                    }
+                    else {
+                      geocoder.geocode({'address': destinationList[j]},
+                          showGeocodedAddressOnMap(true));
+                    }
 
                     //add dist to bar array
                 destinations[j].distance = results[j].distance.text;
-                distances[j] = results[j].distance.text;
 
-                outputDiv.innerHTML += originList[i] + '<br>Name: '+ destinations[j].name + '<br>Distance to ' + destinationList[j] +
+                outputDiv.innerHTML += '<br>Name: '+ destinations[j].name + '<br>Address: ' + destinationList[j] +
                     ':  <br>' + results[j].distance.text + ': Driving will take ' +
                     results[j].duration.text + '<br>';
 
               }
             }
 
-            //Sort distances of bars
-            for (let i = 0; i < distances.length; i++) {
-              distances[i] = distances[i].replace(" mi", "");
+
+            for (let i = 0; i < destinations.length; i++) {
               destinations[i].distance = destinations[i].distance.replace(" mi", "");
             }
 
-            distances.sort(function(a,b){return a-b});
-
-
-            //Assign new object with full bar details in distance order
-           var orderedByDistDestinations = [];
-
-           for (let i=0; i < distances.length; i++) {
-              for (let j=0; j < destinations.length; j++) {
-                if (destinations[j].distance === distances[i]) {
-                  orderedByDistDestinations[i] = destinations[j];
-                  //remove destinations[j] after adding to orderedByDistDestinations
-                  destinations.splice(j, 1);
-                  j--;
-
-
-                  //console.log(orderedByDistDestinations);
-                }
+            //sort destinations by distance
+            destinations.sort(function(a,b) {
+              if(a.distance < b.distance) {
+                return -1;
               }
+              if(a.distance > b.distance) {
+                return 1
+              }
+              return 0;
+            })
+
+            for( let i = 0; i < destinations.length; i++) {
+
             }
 
-            //orderedByDistDestinations now needs to be filtered by HH's now open
+            console.log(destinations);
+
+            //create final object that has bars that have HH currently
 
 
-            console.log(distances);
-            console.log(orderedByDistDestinations);
+
+
 
           }
         });
