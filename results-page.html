@@ -569,10 +569,10 @@
                 destinations[j].distance = results[j].distance.text;
                 destinations[j].driveTime = results[j].duration.text;
 
-                outputDiv.innerHTML += '<br>Name: '+ destinations[j].name + '<br>Address: ' + destinations[j].address +
+            /*    outputDiv.innerHTML += '<br>Name: '+ destinations[j].name + '<br>Address: ' + destinations[j].address +
                     ':  <br>' + destinations[j].distance + ': Driving will take ' +
                     destinations[j].driveTime + '<br>';
-
+*/
               }
             }
 
@@ -592,8 +592,10 @@
               return 0;
             })
 
-            for( let i = 0; i < destinations.length; i++) {
-
+            for( let j = 0; j < destinations.length; j++) {
+              outputDiv.innerHTML += '<br>Name: '+ destinations[j].name + '<br>Address: ' + destinations[j].address +
+                  ':  <br>' + destinations[j].distance + ' mi: Driving will take ' +
+                  destinations[j].driveTime + '<br>';
             }
 
             console.log(destinations);
