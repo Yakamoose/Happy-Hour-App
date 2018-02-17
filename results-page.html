@@ -128,6 +128,7 @@
         }],
         deals: '',
         distance: '',
+        driveTime: '',
         phone: '',
         rating: '',
         image: '',
@@ -152,6 +153,7 @@
         }],
         deals: '',
         distance: '',
+        driveTime: '',
         phone: '',
         rating: '',
         image: '',
@@ -170,6 +172,7 @@
         }],
         deals: '',
         distance: '',
+        driveTime: '',
         phone: '',
         rating: '',
         image: '',
@@ -188,6 +191,7 @@
         }],
         deals: '',
         distance: '',
+        driveTime: '',
         phone: '',
         rating: '',
         image: '',
@@ -206,6 +210,7 @@
         }],
         deals: '',
         distance: '',
+        driveTime: '',
         phone: '',
         rating: '',
         image: '',
@@ -225,6 +230,7 @@
         }],
         deals: '',
         distance: '',
+        driveTime: '',
         phone: '',
         rating: '',
         image: '',
@@ -243,6 +249,7 @@
         }],
         deals: '',
         distance: '',
+        driveTime: '',
         phone: '',
         rating: '',
         image: '',
@@ -262,6 +269,7 @@
         }],
         deals: '',
         distance: '',
+        driveTime: '',
         phone: '',
         rating: '',
         image: '',
@@ -280,6 +288,7 @@
         }],
         deals: '',
         distance: '',
+        driveTime: '',
         phone: '',
         rating: '',
         image: '',
@@ -298,6 +307,7 @@
         }],
         deals: '',
         distance: '',
+        driveTime: '',
         phone: '',
         rating: '',
         image: '',
@@ -316,6 +326,7 @@
         }],
         deals: '',
         distance: '',
+        driveTime: '',
         phone: '',
         rating: '',
         image: '',
@@ -340,6 +351,7 @@
         }],
         deals: '',
         distance: '',
+        driveTime: '',
         phone: '',
         rating: '',
         image: '',
@@ -364,6 +376,7 @@
         }],
         deals: '',
         distance: '',
+        driveTime: '',
         phone: '',
         rating: '',
         image: '',
@@ -382,6 +395,7 @@
         }],
         deals: '',
         distance: '',
+        driveTime: '',
         phone: '',
         rating: '',
         image: '',
@@ -406,6 +420,7 @@
         }],
         deals: '',
         distance: '',
+        driveTime: '',
         phone: '',
         rating: '',
         image: '',
@@ -424,6 +439,7 @@
         }],
         deals: '',
         distance: '',
+        driveTime: '',
         phone: '',
         rating: '',
         image: '',
@@ -442,6 +458,7 @@
         }],
         deals: '',
         distance: '',
+        driveTime: '',
         phone: '',
         rating: '',
         image: '',
@@ -460,6 +477,7 @@
         }],
         deals: '',
         distance: '',
+        driveTime: '',
         phone: '',
         rating: '',
         image: '',
@@ -547,12 +565,13 @@
                           showGeocodedAddressOnMap(true));
                     }
 
-                    //add dist to bar array
+                    //add dist & driveTimeto bar array
                 destinations[j].distance = results[j].distance.text;
+                destinations[j].driveTime = results[j].duration.text;
 
-                outputDiv.innerHTML += '<br>Name: '+ destinations[j].name + '<br>Address: ' + destinationList[j] +
-                    ':  <br>' + results[j].distance.text + ': Driving will take ' +
-                    results[j].duration.text + '<br>';
+                outputDiv.innerHTML += '<br>Name: '+ destinations[j].name + '<br>Address: ' + destinations[j].address +
+                    ':  <br>' + destinations[j].distance + ': Driving will take ' +
+                    destinations[j].driveTime + '<br>';
 
               }
             }
