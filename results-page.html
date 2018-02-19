@@ -29,6 +29,7 @@
 				margin-right: 5%;
 				margin-top: 50px;
 
+
       }
       #left-panel {
         float: left;
@@ -116,88 +117,6 @@
           })
 */
       var destinations = [
-        {
-        name: 'Brick + Mortar',
-        address: '2435 Main St., Santa Monica, CA 90405',
-        type: 'American',
-        happyHours: [{
-          day: [1,2, 3, 4, 5],
-          hhStart: 12,
-          hhEnd: 18,
-          deals: 'Drinks & Food',
-        }],
-        deals: '',
-        distance: '',
-        driveTime: '',
-        phone: '',
-        rating: '',
-        image: '',
-        hhMenuLink: 'http://www.brickandmortar-brg.com/happyhour',
-        },
-
-        {
-        name: 'Enterprise Fish Co.',
-        address: '174 Kinney St, Santa Monica, CA 90405',
-        type: 'Seafood',
-        happyHours: [{
-          day: [1,2, 3, 4, 5],
-          hhStart: 16,
-          hhEnd: 19,
-          deals: 'Drinks & Food',
-        },
-        {
-          day: [5, 6],
-          hhStart: 21,
-          hhEnd: 23,
-          deals: 'Drinks & Food',
-        }],
-        deals: '',
-        distance: '',
-        driveTime: '',
-        phone: '',
-        rating: '',
-        image: '',
-        hhMenuLink: 'https://www.enterprisefishcosantamonica.com/happy-hour',
-        },
-
-        {
-        name: 'Hama Sushi',
-        address: '213 Windward Ave, Venice, CA 90291',
-        type: 'Sushi',
-        happyHours: [{
-          day: [0, 1, 2, 3, 4, 5, 6],
-          hhStart: 16,
-          hhEnd: 19,
-          deals: 'Drinks & Food',
-        }],
-        deals: '',
-        distance: '',
-        driveTime: '',
-        phone: '',
-        rating: '',
-        image: '',
-        hhMenuLink: 'http://www.theveniceconcierge.com/wp-content/uploads/2015/02/Screen-Shot-2015-02-28-at-5.26.05-PM.png',
-        },
-
-        {
-        name: 'Hayden',
-        address: '8820 Washington Blvd, Culver City, CA 90232',
-        type: 'Cafe, Wine Bar, Waffles',
-        happyHours: [{
-          day: [0, 1, 2, 3, 4, 5, 6],
-          hhStart: 17,
-          hhEnd: 19,
-          deals: 'Drinks & Food',
-        }],
-        deals: '',
-        distance: '',
-        driveTime: '',
-        phone: '',
-        rating: '',
-        image: '',
-        hhMenuLink: 'https://www.hayden.la/',
-        },
-
         {
         name: 'Little Ruby',
         address: '109 Santa Monica Blvd, Santa Monica, CA 90401',
@@ -381,107 +300,6 @@
         rating: '',
         image: '',
         hhMenuLink: 'http://www.sunnyspotvenice.com/menus/',
-        },
-
-        {
-        name: 'Wabi Sabi',
-        address: '1637 Abbot Kinney Blvd, Venice, CA 90291',
-        type: 'Sushi',
-        happyHours: [{
-          day: [0, 1, 2, 3, 4, 5, 6],
-          hhStart: 17.5,
-          hhEnd: 18.5,
-          deals: 'Drinks & Food',
-        }],
-        deals: '',
-        distance: '',
-        driveTime: '',
-        phone: '',
-        rating: '',
-        image: '',
-        hhMenuLink: '',
-        },
-
-        {
-        name: 'Baja Cantina',
-        address: '311 Washington Blvd, Marina Del Rey, CA 90292',
-        type: 'Mexican',
-        happyHours: [{
-          day: [1, 2, 3, 4, 5],
-          hhStart: 15,
-          hhEnd: 18.5,
-          deals: 'Drinks & Food',
-        },
-        {
-          day: [1, 2, 3, 4, 5],
-          hhStart: 22,
-          hhEnd: 24,
-          deals: 'Drinks & Food',
-        }],
-        deals: '',
-        distance: '',
-        driveTime: '',
-        phone: '',
-        rating: '',
-        image: '',
-        hhMenuLink: 'http://www.bajacantina.com/weekly-food-specials/',
-        },
-
-        {
-        name: 'Venice Beach Wines',
-        address: '529 Rose Ave, Venice, CA 90291',
-        type: 'Wine Bar',
-        happyHours: [{
-          day: [1, 2, 3, 4, 5],
-          hhStart: 15,
-          hhEnd: 18,
-          deals: 'Drinks & Food',
-        }],
-        deals: '',
-        distance: '',
-        driveTime: '',
-        phone: '',
-        rating: '',
-        image: '',
-        hhMenuLink: 'http://venicebeachwines.com/dinner-menu-1/',
-        },
-
-        {
-        name: 'The Firehouse',
-        address: '213 Rose Ave, Venice, CA 90291',
-        type: 'American',
-        happyHours: [{
-          day: [1, 2, 3, 4, 5],
-          hhStart: 15,
-          hhEnd: 18,
-          deals: 'Drinks & Food',
-        }],
-        deals: '',
-        distance: '',
-        driveTime: '',
-        phone: '',
-        rating: '',
-        image: '',
-        hhMenuLink: 'https://www.firehouseoldsac.com/menus/happy-hour/',
-        },
-
-        {
-        name: 'The Anchor',
-        address: '235 Main St, Venice, CA 90291',
-        type: 'American/Seafood',
-        happyHours: [{
-          day: [2, 3, 4, 5],
-          hhStart: 15,
-          hhEnd: 18,
-          deals: 'Drinks & Food',
-        }],
-        deals: '',
-        distance: '',
-        driveTime: '',
-        phone: '',
-        rating: '',
-        image: '',
-        hhMenuLink: 'http://theanchorvenice.squarespace.com/happy-hour-menu-fall-2015/',
         }];
 
         var locations = [];
@@ -592,17 +410,42 @@
               return 0;
             })
 
+
+//Temporary display of results and some attributes
             for( let j = 0; j < destinations.length; j++) {
               outputDiv.innerHTML += '<br>Name: '+ destinations[j].name + '<br>Address: ' + destinations[j].address +
                   ':  <br>' + destinations[j].distance + ' mi: Driving will take ' +
-                  destinations[j].driveTime + '<br>';
+                  destinations[j].driveTime + '<br>' + 'Happy Hour ends at ' + destinations[j].happyHours[0].hhEnd+ '<br>';
             }
 
             console.log(destinations);
 
+
             //create final object that has bars that have HH currently
+            let d = new Date();
 
+            let day = d.getDay();
+            let hour = d.getHours();
+            let minutes = d.getMinutes()/60;
 
+            let currrentTime = hour + minutes;
+
+            console.log(currrentTime);
+            let finalResults = [];
+/*
+            for(let i=0; i < destinations.length; i++) {
+              for(let j=0; j < destinations[i].happyHours.length; j++) {
+                for(let k=0; destinations[i].happyHours[j].day.length; k++) {
+                  if(day === destinations[i].happyHours[j].day[k]) {
+                    if(destinations[i].happyHours[j].hhStart < currrentTime && currrentTime < destinations[i].happyHours[j].hhEnd) {
+                      finalResults.push(destinations[i]);
+                    }
+                  }
+                }
+              }
+            }
+*/
+            console.log(finalResults);
 
 
 
