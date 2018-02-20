@@ -115,8 +115,98 @@
             console.log(destination);
             console.log('testing in get json');
           })
+
+
+  const destination = require('./destinations');
+  console.log('here comes destination');
+  console.log(destination);
 */
+
+
+
       var destinations = [
+        {
+        name: 'Brick + Mortar',
+        address: '2435 Main St., Santa Monica, CA 90405',
+        type: 'American',
+        happyHours: [{
+          day: [1,2, 3, 4, 5],
+          hhStart: 12,
+          hhEnd: 18,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
+        distance: '',
+        driveTime: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: 'http://www.brickandmortar-brg.com/happyhour',
+        },
+
+        {
+        name: 'Enterprise Fish Co.',
+        address: '174 Kinney St, Santa Monica, CA 90405',
+        type: 'Seafood',
+        happyHours: [{
+          day: [1,2, 3, 4, 5],
+          hhStart: 16,
+          hhEnd: 19,
+          deals: 'Drinks & Food',
+        },
+        {
+          day: [5, 6],
+          hhStart: 21,
+          hhEnd: 23,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
+        distance: '',
+        driveTime: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: 'https://www.enterprisefishcosantamonica.com/happy-hour',
+        },
+
+        {
+        name: 'Hama Sushi',
+        address: '213 Windward Ave, Venice, CA 90291',
+        type: 'Sushi',
+        happyHours: [{
+          day: [0, 1, 2, 3, 4, 5, 6],
+          hhStart: 16,
+          hhEnd: 19,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
+        distance: '',
+        driveTime: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: 'http://www.theveniceconcierge.com/wp-content/uploads/2015/02/Screen-Shot-2015-02-28-at-5.26.05-PM.png',
+        },
+
+        {
+        name: 'Hayden',
+        address: '8820 Washington Blvd, Culver City, CA 90232',
+        type: 'Cafe, Wine Bar, Waffles',
+        happyHours: [{
+          day: [0, 1, 2, 3, 4, 5, 6],
+          hhStart: 17,
+          hhEnd: 19,
+          deals: 'Drinks & Food',
+        }],
+        deals: '',
+        distance: '',
+        driveTime: '',
+        phone: '',
+        rating: '',
+        image: '',
+        hhMenuLink: 'https://www.hayden.la/',
+        },
+
         {
         name: 'Little Ruby',
         address: '109 Santa Monica Blvd, Santa Monica, CA 90401',
@@ -275,31 +365,6 @@
         rating: '',
         image: '',
         hhMenuLink: 'https://www.venicewhaler.com/happy-hour',
-        },
-
-        {
-        name: 'Sunny Spot',
-        address: '822 Washington Blvd, Venice, CA 90292',
-        type: 'American',
-        happyHours: [{
-          day: [1, 2, 3, 4, 5],
-          hhStart: 15.5,
-          hhEnd: 18.5,
-          deals: 'Drinks & Food',
-        },
-        {
-          day: [5, 6],
-          hhStart: 23,
-          hhEnd: 24,
-          deals: 'Drinks & Food',
-        }],
-        deals: '',
-        distance: '',
-        driveTime: '',
-        phone: '',
-        rating: '',
-        image: '',
-        hhMenuLink: 'http://www.sunnyspotvenice.com/menus/',
         }];
 
         var locations = [];
@@ -430,8 +495,20 @@
 
             let currrentTime = hour + minutes;
 
-            console.log(currrentTime);
-            let finalResults = [];
+            console.log(destinations[0].happyHours[0].day);
+            let dayMatch = [];
+
+            for(let i=0; i < destinations.length; i++) {
+              for(let j=0; j < destinations[i].happyHours.length; j++) {
+
+              }
+            }
+
+
+
+
+
+
 /*
             for(let i=0; i < destinations.length; i++) {
               for(let j=0; j < destinations[i].happyHours.length; j++) {
@@ -445,7 +522,12 @@
               }
             }
 */
-            console.log(finalResults);
+
+
+
+
+
+            //console.log(finalResults);
 
 
 
