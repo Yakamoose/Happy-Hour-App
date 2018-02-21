@@ -28,7 +28,7 @@
         happyHours: [{
           day: [1,2, 3, 4, 5],
           hhStart: 12,
-          hhEnd: 18,
+          hhEnd: 18.0,
           deals: 'Drinks & Food',
         }],
         deals: '',
@@ -48,13 +48,13 @@
         happyHours: [{
           day: [1,2, 3, 4, 5],
           hhStart: 16,
-          hhEnd: 19,
+          hhEnd: 19.0,
           deals: 'Drinks & Food',
         },
         {
           day: [5, 6],
           hhStart: 21,
-          hhEnd: 23,
+          hhEnd: 23.0,
           deals: 'Drinks & Food',
         }],
         deals: '',
@@ -74,7 +74,7 @@
         happyHours: [{
           day: [0, 1, 2, 3, 4, 5, 6],
           hhStart: 16,
-          hhEnd: 19,
+          hhEnd: 19.0,
           deals: 'Drinks & Food',
         }],
         deals: '',
@@ -94,7 +94,7 @@
         happyHours: [{
           day: [0, 1, 2, 3, 4, 5, 6],
           hhStart: 17,
-          hhEnd: 19,
+          hhEnd: 19.0,
           deals: 'Drinks & Food',
         }],
         deals: '',
@@ -155,7 +155,7 @@
         happyHours: [{
           day: [1, 2, 3, 4, 5],
           hhStart: 16,
-          hhEnd: 18,
+          hhEnd: 18.0,
           deals: 'Drinks & Food',
         }],
         deals: '',
@@ -216,7 +216,7 @@
         happyHours: [{
           day: [1, 2, 3, 4, 5],
           hhStart: 16,
-          hhEnd: 18,
+          hhEnd: 18.0,
           deals: 'Drinks & Food',
         }],
         deals: '',
@@ -236,7 +236,7 @@
         happyHours: [{
           day: [0, 1, 2, 3, 4, 5, 6],
           hhStart: 17,
-          hhEnd: 19,
+          hhEnd: 19.0,
           deals: 'Drinks & Food',
         }],
         deals: '',
@@ -256,13 +256,13 @@
         happyHours: [{
           day: [1, 2, 3, 4],
           hhStart: 15,
-          hhEnd: 18,
+          hhEnd: 18.0,
           deals: 'Drinks & Food',
         },
         {
           day: [1, 2, 3, 4],
           hhStart: 22,
-          hhEnd: 24,
+          hhEnd: 24.0,
           deals: 'Drinks & Food',
         }],
         deals: '',
@@ -288,7 +288,7 @@
         {
           day: [5, 6],
           hhStart: 23,
-          hhEnd: 24,
+          hhEnd: 24.0,
           deals: 'Drinks & Food',
         }],
         deals: '',
@@ -394,7 +394,7 @@
         happyHours: [{
           day: [2, 3, 4, 5],
           hhStart: 15,
-          hhEnd: 18,
+          hhEnd: 18.0,
           deals: 'Drinks & Food',
         }],
         deals: '',
@@ -406,6 +406,10 @@
         image: '',
         hhMenuLink: 'http://theanchorvenice.squarespace.com/happy-hour-menu-fall-2015/',
         }];
+
+
+
+
 
         var bounds = new google.maps.LatLngBounds;
         var markersArray = [];
@@ -511,9 +515,7 @@
               return 0;
             })
 
-
-
-
+            console.log('destinations');
             console.log(destinations);
 
 
@@ -527,14 +529,17 @@
             let currentTime = hour + minutes;
             //let currentTime = 19;
 
-            let finalResults = [];
+            let openNowResults = [];
 
             destinations.forEach(function(destination) {
               destination.happyHours.forEach(function(happyHour) {
                 happyHour.day.forEach(function(d) {
                   if(day === d) {
                     if(happyHour.hhStart < currentTime && currentTime < happyHour.hhEnd) {
-                      finalResults.push(destination);
+                      destination.deals = happyHour.deals;
+                      destination.hhEnd = convertTime(`${happyHour.hhEnd}`);
+                      openNowResults.push(destination);
+
                     }
                   };
                 })
@@ -542,22 +547,71 @@
             });
 
 
-            //Show finalResults on map
-            for (var j = 0; j < finalResults.length; j++) {
-                 geocoder.geocode({'address': finalResults[j].address},
+            //Show openNowResults on map
+            function sendToMap() {
+              for (var j = 0; j < openNowResults.length; j++) {
+                 geocoder.geocode({'address': openNowResults[j].address},
                  showGeocodedAddressOnMap(true));
-            };
+              };
+            }
+            setTimeout(sendToMap, 1000);
+
+            console.log('open now');
+            console.log(openNowResults);
 
 
+            const finalResults = getYelpAtts(openNowResults);
+
+            console.log('final results');
             console.log(finalResults);
 
             //Temporary display of results and some attributes
+            outputDiv.innerHTML += finalResults.length + " results showing. <br>";
             for( let j = 0; j < finalResults.length; j++) {
                 outputDiv.innerHTML += '<br>Name: '+ finalResults[j].name + '<br>Address: ' + finalResults[j].address +
                 ':  <br>' + finalResults[j].distance + ' mi: Driving will take ' +
-                finalResults[j].driveTime + '<br>' + 'Happy Hour ends at ' + finalResults[j].happyHours[0].hhEnd+ '<br>';
+                finalResults[j].driveTime + '<br>' + 'Happy Hour ends at ' + finalResults[j].hhEnd+ '<br>';
             }
         });
+      }
+
+      function getYelpAtts(openNowResults) {
+
+
+        return openNowResults;
+      }
+
+
+      function convertTime(time) {
+        time = time.split('.'); // convert to array
+
+        // fetch
+        var hours = Number(time[0]);
+        var minutes = (Number(time[1])*6);
+
+        // calculate
+        var timeValue;
+
+        if (hours > 0 && hours <= 12)
+        {
+          timeValue= "" + hours;
+        } else if (hours > 12)
+        {
+          timeValue= "" + (hours - 12);
+        }
+        else if (hours == 0)
+        {
+          timeValue= "12";
+        }
+
+        if(isNaN(minutes)){
+          timeValue += ":00";
+        } else {
+          timeValue += (minutes < 10) ? ":0" + minutes : ":" + minutes;  // get minutes
+        }
+        timeValue += (hours >= 12) ? " P.M." : " A.M.";  // get AM/PM
+
+        return timeValue;
       }
 
 
