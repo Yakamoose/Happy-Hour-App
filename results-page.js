@@ -1,3 +1,5 @@
+const YELP_URL = "https://api.yelp.com/v3/businesses/";
+const YELP_API_KEY = "IubXj0FpEeTn8_hgYoR2TJsFvrfFC_bj3wsetjKzdRsVQtfTH6Fx8koPxn1MOWP7qhcTwuwtqeg2NqIAaE12YvRSFi8KUM5icnb7rBQpN_Snsonrlo_Cu7nIz9t4WnYx";
 
       function initMap() {
 
@@ -28,7 +30,7 @@
         happyHours: [{
           day: [1,2, 3, 4, 5],
           hhStart: 12,
-          hhEnd: 18.0,
+          hhEnd: 18,
           deals: 'Drinks & Food',
         }],
         deals: '',
@@ -38,6 +40,7 @@
         phone: '',
         rating: '',
         image: '',
+        yelpId: 'brick-mortar-santa-monica',
         hhMenuLink: 'http://www.brickandmortar-brg.com/happyhour',
         },
 
@@ -48,13 +51,13 @@
         happyHours: [{
           day: [1,2, 3, 4, 5],
           hhStart: 16,
-          hhEnd: 19.0,
+          hhEnd: 19,
           deals: 'Drinks & Food',
         },
         {
           day: [5, 6],
           hhStart: 21,
-          hhEnd: 23.0,
+          hhEnd: 23,
           deals: 'Drinks & Food',
         }],
         deals: '',
@@ -64,6 +67,7 @@
         phone: '',
         rating: '',
         image: '',
+        yelpId: 'enterprise-fish-santa-monica',
         hhMenuLink: 'https://www.enterprisefishcosantamonica.com/happy-hour',
         },
 
@@ -74,7 +78,7 @@
         happyHours: [{
           day: [0, 1, 2, 3, 4, 5, 6],
           hhStart: 16,
-          hhEnd: 19.0,
+          hhEnd: 19,
           deals: 'Drinks & Food',
         }],
         deals: '',
@@ -84,6 +88,7 @@
         phone: '',
         rating: '',
         image: '',
+        yelpId: 'hama-sushi-venice',
         hhMenuLink: 'http://www.theveniceconcierge.com/wp-content/uploads/2015/02/Screen-Shot-2015-02-28-at-5.26.05-PM.png',
         },
 
@@ -94,7 +99,7 @@
         happyHours: [{
           day: [0, 1, 2, 3, 4, 5, 6],
           hhStart: 17,
-          hhEnd: 19.0,
+          hhEnd: 19,
           deals: 'Drinks & Food',
         }],
         deals: '',
@@ -104,6 +109,7 @@
         phone: '',
         rating: '',
         image: '',
+        yelpId: 'hayden-culver-city',
         hhMenuLink: 'https://www.hayden.la/',
         },
 
@@ -124,6 +130,7 @@
         phone: '',
         rating: '',
         image: '',
+        yelpId: 'little-ruby-santa-monica-2',
         hhMenuLink: 'https://patch.com/california/santamonica/new-happy-hour-launches-little-ruby-santa-monica',
         },
 
@@ -145,6 +152,7 @@
         phone: '',
         rating: '',
         image: '',
+        yelpId: 'the-lobster-santa-monica',
         hhMenuLink: 'http://thelobster.com/happy-hour-menu/',
         },
 
@@ -155,7 +163,7 @@
         happyHours: [{
           day: [1, 2, 3, 4, 5],
           hhStart: 16,
-          hhEnd: 18.0,
+          hhEnd: 18,
           deals: 'Drinks & Food',
         }],
         deals: '',
@@ -165,6 +173,7 @@
         phone: '',
         rating: '',
         image: '',
+        yelpId: 'lunetta-all-day-santa-monica',
         hhMenuLink: 'https://www.lunettasm.com/all-day#allday-menu',
         },
 
@@ -186,6 +195,7 @@
         phone: '',
         rating: '',
         image: '',
+        yelpId: 'michaels-santa-monica-2',
         hhMenuLink: 'http://www.michaelssantamonica.com/',
         },
 
@@ -206,6 +216,7 @@
         phone: '',
         rating: '',
         image: '',
+        yelpId: 'sushi-roku-santa-monica',
         hhMenuLink: 'http://www.innovativedining.com/download/SRSM_bar-menu-HH_11.20.17.pdf',
         },
 
@@ -216,7 +227,7 @@
         happyHours: [{
           day: [1, 2, 3, 4, 5],
           hhStart: 16,
-          hhEnd: 18.0,
+          hhEnd: 18,
           deals: 'Drinks & Food',
         }],
         deals: '',
@@ -226,6 +237,7 @@
         phone: '',
         rating: '',
         image: '',
+        yelpId: 'tallulas-santa-monica',
         hhMenuLink: 'http://www.tallulasrestaurant.com/wp-content/uploads/2018/01/Happy-Hour-1.25.18.pdf',
         },
 
@@ -236,7 +248,7 @@
         happyHours: [{
           day: [0, 1, 2, 3, 4, 5, 6],
           hhStart: 17,
-          hhEnd: 19.0,
+          hhEnd: 19,
           deals: 'Drinks & Food',
         }],
         deals: '',
@@ -246,6 +258,7 @@
         phone: '',
         rating: '',
         image: '',
+        yelpId: 'canal-club-venice-2',
         hhMenuLink: 'http://www.canalclubvenice.com/new-page/',
         },
 
@@ -256,13 +269,13 @@
         happyHours: [{
           day: [1, 2, 3, 4],
           hhStart: 15,
-          hhEnd: 18.0,
+          hhEnd: 18,
           deals: 'Drinks & Food',
         },
         {
           day: [1, 2, 3, 4],
           hhStart: 22,
-          hhEnd: 24.0,
+          hhEnd: 24,
           deals: 'Drinks & Food',
         }],
         deals: '',
@@ -272,6 +285,7 @@
         phone: '',
         rating: '',
         image: '',
+        yelpId: 'the-venice-whaler-venice',
         hhMenuLink: 'https://www.venicewhaler.com/happy-hour',
         },
 
@@ -288,7 +302,7 @@
         {
           day: [5, 6],
           hhStart: 23,
-          hhEnd: 24.0,
+          hhEnd: 24,
           deals: 'Drinks & Food',
         }],
         deals: '',
@@ -298,12 +312,13 @@
         phone: '',
         rating: '',
         image: '',
+        yelpId: 'sunny-spot-venice-2',
         hhMenuLink: 'http://www.sunnyspotvenice.com/menus/',
         },
 
         {
         name: 'Wabi Sabi',
-        address: '1637 Abbot Kinney Blvd, Venice, CA 90291',
+        address: '1635 Abbot Kinney Blvd, Venice, CA 90291',
         type: 'Sushi',
         happyHours: [{
           day: [0, 1, 2, 3, 4, 5, 6],
@@ -318,6 +333,7 @@
         phone: '',
         rating: '',
         image: '',
+        yelpId: 'wabi-sabi-sushi-and-solana-venice',
         hhMenuLink: '',
         },
 
@@ -344,6 +360,7 @@
         phone: '',
         rating: '',
         image: '',
+        yelpId: 'baja-cantina-marina-del-rey',
         hhMenuLink: 'http://www.bajacantina.com/weekly-food-specials/',
         },
 
@@ -364,6 +381,7 @@
         phone: '',
         rating: '',
         image: '',
+        yelpId: 'venice-beach-wines-venice',
         hhMenuLink: 'http://venicebeachwines.com/dinner-menu-1/',
         },
 
@@ -384,6 +402,7 @@
         phone: '',
         rating: '',
         image: '',
+        yelpId: 'the-firehouse-venice',
         hhMenuLink: 'https://www.firehouseoldsac.com/menus/happy-hour/',
         },
 
@@ -394,7 +413,7 @@
         happyHours: [{
           day: [2, 3, 4, 5],
           hhStart: 15,
-          hhEnd: 18.0,
+          hhEnd: 18,
           deals: 'Drinks & Food',
         }],
         deals: '',
@@ -404,6 +423,7 @@
         phone: '',
         rating: '',
         image: '',
+        yelpId: 'the-anchor-venice',
         hhMenuLink: 'http://theanchorvenice.squarespace.com/happy-hour-menu-fall-2015/',
         }];
 
@@ -471,8 +491,10 @@
             var showGeocodedAddressOnMap = function(asDestination) {
               var icon = asDestination ? destinationIcon : originIcon;
               return function(results, status) {
-                console.log(status);
+                //console.log(status);
                 if (status === 'OK') {
+                  //console.log('result location');
+                  //console.log(results[0].geometry.location);
                   map.fitBounds(bounds.extend(results[0].geometry.location));
                   markersArray.push(new google.maps.Marker({
                     map: map,
@@ -527,7 +549,7 @@
             let minutes = d.getMinutes()/60;
 
             let currentTime = hour + minutes;
-            //let currentTime = 19;
+            //let currentTime = 16.5;
 
             let openNowResults = [];
 
@@ -550,11 +572,13 @@
             //Show openNowResults on map
             function sendToMap() {
               for (var j = 0; j < openNowResults.length; j++) {
+
                  geocoder.geocode({'address': openNowResults[j].address},
                  showGeocodedAddressOnMap(true));
               };
             }
-            setTimeout(sendToMap, 1000);
+            //setTimeout(sendToMap, 1000);
+            sendToMap();
 
             console.log('open now');
             console.log(openNowResults);
@@ -569,13 +593,27 @@
             outputDiv.innerHTML += finalResults.length + " results showing. <br>";
             for( let j = 0; j < finalResults.length; j++) {
                 outputDiv.innerHTML += '<br>Name: '+ finalResults[j].name + '<br>Address: ' + finalResults[j].address +
-                ':  <br>' + finalResults[j].distance + ' mi: Driving will take ' +
+                '<br>' + finalResults[j].distance + ' mi: Driving will take ' +
                 finalResults[j].driveTime + '<br>' + 'Happy Hour ends at ' + finalResults[j].hhEnd+ '<br>';
             }
         });
       }
 
       function getYelpAtts(openNowResults) {
+        //const yelpAtts = GET src="https://api.yelp.com/v3/businesses/the-anchor-venice";
+        //console.log(yelpAtts);
+        //$.ajax()
+        const URL = YELP_URL+openNowResults[0].yelpId;
+        console.log(URL);
+
+        const atts = [];
+        $.getJSON('URL')
+          .done(function(data) {
+            atts = data;
+            console.log('testing yelp api');
+            console.log(atts);
+          })
+
 
 
         return openNowResults;
